@@ -37,7 +37,8 @@ const showingNavigationDropdown = ref(false)
                 <NavLink
                   v-if="can('category.viewAny')"
                   :href="route('vendor.menu')"
-                  :active="route().current('vendor.menu')">
+                  :active="route().current('vendor.menu')"
+                >
                   Restaurant menu
                 </NavLink>
                 <NavLink
@@ -53,6 +54,13 @@ const showingNavigationDropdown = ref(false)
                   :active="route().current('vendor.staff-members.index')"
                 >
                   Staff Management
+                </NavLink>
+                <NavLink
+                  v-if="can('order.update')"
+                  :href="route('staff.orders.index')"
+                  :active="route().current('staff.orders.index')"
+                >
+                  Restaurant Orders
                 </NavLink>
               </div>
             </div>
