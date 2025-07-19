@@ -22,12 +22,14 @@ class PermissionSeeder extends Seeder
             'restore',
             'forceDelete',
         ];
- 
+
         $resources = [
             'user',
             'restaurant',
+            'category',
+            'product',
         ];
- 
+
         collect($resources)
             ->crossJoin($actions)
             ->map(function ($set) {
