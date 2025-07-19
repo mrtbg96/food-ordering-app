@@ -24,5 +24,3 @@ Route::group([
 ], function () {
     Route::resource('/restaurants', RestaurantController::class);
 });
-
-require __DIR__ . '/auth.php';
