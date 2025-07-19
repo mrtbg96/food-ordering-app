@@ -11,6 +11,7 @@ use App\Enums\RoleName;
 use App\Models\Role;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Authenticatable
 {
@@ -93,5 +94,10 @@ class User extends Authenticatable
     public function restaurant(): HasOne
     {
         return $this->hasOne(Restaurant::class, 'owner_id');
+    }
+
+    public function orders(): HasMany
+    {
+        return $this->hasMany(Order::class, 'customer_id');
     }
 }
