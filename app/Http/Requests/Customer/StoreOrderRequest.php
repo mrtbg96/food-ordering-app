@@ -20,7 +20,7 @@ class StoreOrderRequest extends FormRequest
             'items.*.id'            => ['required', 'exists:products,id'],
             'items.*.name'          => ['required', 'string'],
             'items.*.price'         => ['required', 'integer'],
-            'items.*.restaurant_id' => ['required', 'exists:restaurants,id', 'in:' . $this->restaurant_id],
+            'items.*.restaurant_id' => ['required', 'exists:restaurants,id', 'in:' . $this->input('restaurant_id')],
             'total'                 => ['required', 'integer', 'gt:0'],
         ];
     }
